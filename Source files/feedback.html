@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: #f09e05;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px 0;
+        }
+
+        .feedback-form h2 {
+            color: #333;
+        }
+
+        .feedback-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-form label {
+            margin-top: 10px;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .feedback-form button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .feedback-form button:hover {
+            background: #555;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #thankYouMessage {
+            margin-top: 20px;
+            padding: 20px;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+        }
+    </style>
+    <link rel="icon" href="../assets/Logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Feedback</h1>
+        </header>
+        <main>
+            <section class="feedback-form">
+                <h2>We'd love to hear from you!</h2>
+                <form id="feedbackForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="thankYouMessage" class="hidden">
+                    <h3>Thank you for your feedback!</h3>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer container">
+
+                <div class="footer-left">
+                    <a href="../index.html"><img src="../assets/Navlogo.png" width="200px" height="50px" /></a>
+                    <p class="footer-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae molestiae, aliquam doloremque sit,
+                        voluptates voluptatem eaque nulla harum minima eveniet libero quibusdam labore laudantium quam eius itaque magni et
+                        obcaecati?sit amet consectetur, adipisicing elit. Beatae molestiae, </p>
+                </div>
+                <div class="footer-midd">
+                    <h2 class="footer-h">COMPANY</h2>
+                    <div class="footer-p">
+                        <a href="../index.html">
+                            <p>Home</p>
+                        </a>
+                        <a href="aboutus.html">
+                            <p>About us</p>
+                        </a>
+                        <a href="ourpartners.html">
+                            <p>Our partners</p>
+                        </a>
+                        <a href="#">
+                            <p>Privacy policy</p>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="footer-right">
+                    <h2 class="footer-h">GET IN TOUCH</h2>
+                    <p class="footer-p">+91 977438xxxx</p>
+                    <p class="footer-p">cozyKitchen@gmail.com</p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const feedbackForm = document.getElementById('feedbackForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        feedbackForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            feedbackForm.classList.add('hidden');
+            thankYouMessage.classList.remove('hidden');
+        });
+    });
+
+</script>
+
+</html>
